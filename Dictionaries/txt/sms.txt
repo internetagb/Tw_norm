@@ -1,0 +1,187 @@
++:más
+-:menos
+=:igual
+a2:adiós
+abzo:abrazo
+akba:acaba
+archvo:archivo
+arg:argentina
+artclo:artículo
+artfcial:artificial
+ataq:ataque
+atrizar:aterrizar
+azla:hazla
+batry:batería
+bbq:barbacoa
+bbr:beber
+bn:bien
+botya:botella
+bra:brasil
+brbja:burbuja
+brma:broma
+brmar:bromear
+bs:beso
+bss:besos
+bstnt:bastante
+cel:celular
+chi:chile
+cmnkt:comunícate
+cn:con
+d:de
+dbria:debería
+dcir:decir
+dd:días
+dicnario:diccionario
+dir:dirección
+dnd:donde
+dom:domingo
+ej:ejemplo
+empzar:empezar
+emrgencia:emergencia
+enqntro:encuentro
+entrda:entrada
+exam:examen
+fa:favor
+fin:final
+firm:firme
+flidads:felicidades
+frt:fuerte
+fsta:fiesta
+gdo:grado
+gnrcn:generación
+gnt:gente
+gral%:generalmente
+gral:general
+grdo:gordo
+grduar:graduar
+hcr:hacer
+hela2:helado
+hno:hermano
+hr:hora
+indval:individual
+info:información
+infrmal:informal
+jf:jefe
+jnts:juntos
+jue:jueves
+jvnil:juvenil
+ksa:casa
+kste:cassette
+lgr:lugar
+lun:lunes
+m:metro
+ma:mamá
+mjr:mejor
+mk?:¿me quieres?
+mm:meses
+mntir:mentir
+msj:mensaje
+msj:mensaje
+mto:moto
+mv:móvil
+mxo:mucho
+mxo:mucho
+mñna:mañana
+n:no
+ncrible:increíble
+net:internet
+nlc:no lo conozco
+nls:no lo sé
+nph:no puedo hablar
+npn:no pasa nada
+ns:nos
+nsn:no se nada
+nsti:instituto
+nt1p:no tengo un peso
+ntimo:íntimo
+nv:nos vemos
+nva:nos vemos allí
+pa:papá
+pco:poco
+pdo:borrachera
+pdt:¡piérdete!
+pf:por favor
+pkñ:pequeño
+pls:porfavor
+porfa:por favor
+pq:porque
+pqñ:pequeño
+prf:profesor
+pscna:piscina
+pso:paso
+q:que
+qal:cuál
+qalkera:cualquiera
+qirsir?:¿quierés ir?
+qmple:cumpleaños
+qndo:cuándo
+qt1bd:que tengas un buen día
+qtal?:¿qué tal?
+qtpsa?:¿qué te pasa?
+r:responde
+rmno:hermano
+rptlo:repítelo
+salu2:saludos
+sbdo:sábado
+sbs?:¿sabés?
+skpar:escapar
+slds:saludos
+slmos?:¿salimos?
+sms:mensaje de texto
+sprar:esperar
+spro:espero
+sq:es que
+srt!:¡suerte!
+ssclcl:sí, sí, claro, claro
+ssq:si es que
+st:éste
+stdo:estado
+stld:si tú lo dices
+t@:te mando un mail
+tasok?:¿estás bien?
+tb:también
+tbj:trabajo
+thanx:gracias
+tjt:tarjeta
+tki:tengo que irme
+tl:teléfono
+tmb:también
+tng:tengo
+to:te odio
+tq:te quiero
+tqm:te quiero mucho
+trd:tarde
+tv:televisión
+tvl:te veo luego
+u:tú
+vac:vacaciones
+vmos:vemos
+vms:vemos
+vns?:¿vienes?
+vrns:viernes
+wpa:¡guapa!
+x:por
+xa:para
+xam:examen
+xat:chat
+xat:chat
+xatr:chatear
+xclnt:excelente
+xdon:perdón
+xfa:por favor
+xilno:chileno
+xk?:¿por qué?
+xka:chica
+xko:chico
+xo:pero
+xq:porque
+xx:chica
+xy:chico
+yamm:llámame
+yav:llave
+ymam:llámame
+zibrar:celebrar
+zntral:central
+zntro:centro
+zzz:me duermo
+ñ:año
