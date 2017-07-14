@@ -2,7 +2,7 @@ from os import path
 from collections import defaultdict
 
 
-class dicts:
+class dicts(object):
 
     def __init__(self):
 
@@ -26,7 +26,7 @@ class dicts:
 
         # create dict of spanish names
         n = defaultdict(set)
-        namesfile = open(filepath + 'names.txt', 'r')
+        namesfile = open(filepath + 'proper_nouns.txt', 'r')
         lines = namesfile.read().split('\n')
         for word in lines:
             n[word[0]].add(word)

@@ -1389,8 +1389,6 @@ acontecer
 acontecido
 acontecimiento
 acontiado
-a contráriis
-a contrario sensu
 acopado
 acopar
 acopetado
@@ -8284,7 +8282,6 @@ aresta
 arestil
 arestín
 arestinado
-ares y mares
 aretalogía
 aretalógico
 arete
@@ -10973,7 +10970,6 @@ azut
 azutea
 azuzador
 azuzar
-b
 baalita
 baba
 babaco
@@ -14686,8 +14682,6 @@ buzonera
 buzos
 byroniano
 byte
-c
-ca
 caaminí
 cabadelante
 cabadura
@@ -18005,7 +17999,6 @@ castoreño
 castóreo
 castorina
 castorio
-Cástor y Pólux
 castra
 castración
 castradera
@@ -26960,7 +26953,6 @@ cuzma
 cuzo
 cuzqueño
 cuzul
-d
 dable
 daca
 dacá
@@ -32756,8 +32748,7 @@ duunviro
 dux
 duz
 DVD
-e
-ea
+easonense
 easonense
 ebanista
 ebanistería
@@ -39860,7 +39851,6 @@ eyectar
 eyector
 ezquerdear
 ezquite
-f
 fa
 faba
 fabada
@@ -42701,7 +42691,6 @@ futuro
 futurología
 futurólogo
 fututo
-g
 gabacha
 gabachada
 gabacho
@@ -45545,7 +45534,6 @@ guzla
 guzmán
 guzpátaro
 guzpatarra
-h
 ha
 haba
 habado
@@ -47697,7 +47685,6 @@ huta
 hutía
 huy
 huyuyo
-i
 iatrogénico
 ibaguereño
 ibarreño
@@ -50831,7 +50818,6 @@ izquierdismo
 izquierdista
 izquierdo
 izquierdoso
-j
 ja
 jaba
 jabado
@@ -51779,7 +51765,6 @@ juzgaduría
 juzgamiento
 juzgamundos
 juzgar
-k
 ka
 kaaguaseño
 kaakupeño
@@ -51879,7 +51864,6 @@ kris
 kurchatovio
 kurdo
 kuwaití
-l
 la
 lábaro
 labe
@@ -54288,7 +54272,6 @@ luxar
 luxemburgués
 luxómetro
 luz
-m
 mabí
 mable
 mabolo
@@ -59532,8 +59515,6 @@ mutuo
 muy
 muy muy
 muzárabe
-n
-ñ
 na
 ña
 naba
@@ -60899,7 +60880,6 @@ nutritivo
 nutriz
 nutual
 ñuzco
-o
 oa
 oasis
 oaxaqueño
@@ -62296,7 +62276,6 @@ ozono
 ozonómetro
 ozonosfera
 ozonósfera
-p
 pabellón
 pabilo
 pabilón
@@ -69642,7 +69621,6 @@ puzle
 puzol
 puzolana
 pyme
-q
 quadrívium
 quark
 quásar
@@ -70137,7 +70115,6 @@ quizarrá
 quizás
 quizcuate
 quórum
-r
 raba
 rabada
 rabadán
@@ -74535,7 +74512,6 @@ rútilo
 rutina
 rutinario
 rutinero
-s
 sabacuante
 sabadellense
 sabadeño
@@ -79062,7 +79038,6 @@ suversión
 suyate
 suyo
 suzón
-t
 ta
 taba
 tabacal
@@ -83873,7 +83848,6 @@ tuyo
 tuyuyo
 tuza
 twahka
-u
 ubajay
 ube
 ubérrimo
@@ -84334,7 +84308,6 @@ uy
 uyunense
 uzbeko
 uzo
-v
 vaca
 vacabuey
 vacación
@@ -86247,7 +86220,6 @@ vulturno
 vulva
 vusco
 vusted
-w
 wagneriano
 washingtoniano
 waterpolista
@@ -86269,7 +86241,6 @@ windsurfing
 windsurfista
 wólfram
 wolframio
-x
 xantoma
 xeca
 xecudo
@@ -86311,7 +86282,6 @@ xocoatole
 xocoyote
 xola
 xolo
-y
 ya
 yaacabó
 yaba
@@ -86552,7 +86522,6 @@ yuyería
 yuyero
 yuyo
 yuyuba
-z
 za
 zabalmedina
 zabarcera
