@@ -16,17 +16,21 @@ class OOVclassifier(object):
     def dictionary_lookup(self, word):
         assert len(word) > 0
         key = word[0]
-        result = (word in self.ND.keys()
-                  or word in self.SD.get(key, {})
-                  or word in self.PND.get(key, {})
-                  # or word in self.VD.get(key, {})
-                  )
-        return result
+        nd = ''
+        if word in self.ND.keys():
+            result = True
+            nd = self.ND[word]
+        else:
+            result = (word in self.SD.get(key, {})
+                      or word in self.PND.get(key, {})
+                      # or word in self.VD.get(key, {})
+                      )
+        return (result, nd)
 
     def affix_check(self, word):
         lemma = make_tags(self.tagger.tag_text(word))[0].lemma
-        # print("El lema de", word, 'es:', lemma)
         return self.dictionary_lookup(lemma)
 
     def check(self, word):
-        return self.dictionary_lookup(word) or self.affix_check(word)
+        d_lookup = self.dictionary_lookup(word)
+        return (d_lookup[0] or self.affix_check(word), d_lookup[1])
