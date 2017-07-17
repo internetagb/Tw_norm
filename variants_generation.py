@@ -51,30 +51,26 @@ class PrimaryCandidates(object):
     def check_sound(self, word):
         cands = self.candidates
         print(cands)
-        len_w = len(word)
+        word_nr = re.sub(r'(.)\1+', r'\1', word)
+        len_w = len(word_nr)
+        a = 'aáoóuú'
+        e = 'eéií'
+        poss = ''
+        pron = {e: {'c' : 'Csz', 's': 'Scz', 'z': 'Zcs', 'g': 'Gj', 'j': 'Jg', 'k': ''},
+                a: {'c' : 'Ck', 's': 'Sz', 'z': 'Zs', 'g': 'G', 'j': 'J', 'k': 'c'}}
         for i in range(len_w-1):
-            cl = word[i]
-            nl = word[i+1]
+            cl = word_nr[i]
+            nl = word_nr[i+1]
             to_compare = [cand for cand in cands if len(cand) == len_w 
                                                     and cand[i] != cl]
-            if cl == 'c' and nl in 'eiéí':
+            if cl in pron[a].keys():
+                if nl in a:
+                    poss = pron[a][cl]
+                elif nl in e:
+                    poss = pron[e][cl]
                 for c in to_compare:
-                    if c[i] not in 'Csz':
+                    if c[i] not in poss:
                         cands.discard(c)
-            elif cl == 'c' and nl in 'aouáóú':
-                for c in to_compare:
-                    if c[i] not in 'Ck':
-                        cands.discard(c)
-
-            elif cl == 's' and nl in 'eiéí':
-                for c in to_compare:
-                    if c[i] not in 'Scz':
-                        cands.discard(c)
-            elif cl == 's' and nl in 'aouáóú':
-                for c in to_compare:
-                    if c[i] not in 'Szk':
-                        cands.discard(c)
-
         self.candidates = cands
 
     def change_letters(self, word):
@@ -82,7 +78,8 @@ class PrimaryCandidates(object):
         change = {'v': ['b'], 'b': ['v'], 'c': ['s', 'z', 'k'],
                   's': ['c', 'z'], 'z': ['s', 'c'], 'll': ['y', 'sh'],
                   'y': ['ll', 'sh'], 'sh': ['ll', 'y'], 'x': ['ch'],
-                  'h': [''], 'k': ['c', 'qu'], 'qu': ['k']}
+                  'h': [''], 'k': ['c', 'qu'], 'qu': ['k'],
+                  'j': ['g'], 'g': ['j']}
         for i in range(len(word)):
             cl = word[i]  # current word
             pair = word[i:i+2]  # pair of letters for 'll' and 'sh' cases
@@ -140,10 +137,11 @@ class PrimaryCandidates(object):
 
     def all(self, word):
         self.char_rep(word)
-        self.upper_lower(word)
-        self.spelling_error(word, self.n_errors)
-        self.accent_mark(word)
-        self.check_sound(word)
+        for w in self.candidates:
+            self.spelling_error(w, self.n_errors)
+            # self.upper_lower(w)
+            self.accent_mark(w)
+            # self.check_sound(w)
 
 class SecondaryCandidates(object):
     def __init__(self):
@@ -207,4 +205,4 @@ for _ in range(5):
     if c == set():
         b = SecondaryCandidates()
         b.edit_distance(inp)
-        print(b.candidates)
+        print("Second:",b.candidates)

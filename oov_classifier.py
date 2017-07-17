@@ -14,17 +14,20 @@ class OOVclassifier(object):
         self.tagger = TreeTagger(TAGLANG='es', TAGDIR=path)
 
     def dictionary_lookup(self, word):
-        assert len(word) > 0
-        key = word[0]
-        nd = ''
-        if word in self.ND.keys():
-            result = True
-            nd = self.ND[word]
+        if word == '':
+            result = False
+            nd = ''
         else:
-            result = (word in self.SD.get(key, {})
-                      or word in self.PND.get(key, {})
-                      # or word in self.VD.get(key, {})
-                      )
+            key = word[0]
+            nd = ''
+            if word in self.ND.keys():
+                result = True
+                nd = self.ND[word]
+            else:
+                result = (word in self.SD.get(key, {})
+                          or word in self.PND.get(key, {})
+                          # or word in self.VD.get(key, {})
+                          )
         return (result, nd)
 
     def affix_check(self, word):
