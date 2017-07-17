@@ -28,8 +28,13 @@ class OOVclassifier(object):
         return (result, nd)
 
     def affix_check(self, word):
-        lemma = make_tags(self.tagger.tag_text(word))[0].lemma
-        return self.dictionary_lookup(lemma)
+        result = False
+        if word.islower() or word.istitle():
+            lemma = make_tags(self.tagger.tag_text(word))[0].lemma
+            result = self.dictionary_lookup(lemma)[0]
+        # print("el lema de", word, "es:", lemma)
+        return result
+        # return False
 
     def check(self, word):
         d_lookup = self.dictionary_lookup(word)

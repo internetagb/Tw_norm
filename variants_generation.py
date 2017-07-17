@@ -5,9 +5,10 @@ from oov_classifier import OOVclassifier
 
 class PrimaryCandidates(object):
 
-    def __init__(self):
+    def __init__(self, n):
         self.candidates = set()
         self.cf = OOVclassifier()
+        self.n_errors = n
 
     def upper_lower(self, word):
         candidates = set()
@@ -47,33 +48,72 @@ class PrimaryCandidates(object):
                     candidates.add(cand)
         self.candidates = self.candidates.union(candidates)
 
-    def spelling_error(self, word):
-        # analiza solo un error
-        # ejemplo: kaza me da caza y kasa (casa no)
+    def check_sound(self, word):
+        cands = self.candidates
+        print(cands)
+        len_w = len(word)
+        for i in range(len_w-1):
+            cl = word[i]
+            nl = word[i+1]
+            to_compare = [cand for cand in cands if len(cand) == len_w 
+                                                    and cand[i] != cl]
+            if cl == 'c' and nl in 'eiéí':
+                for c in to_compare:
+                    if c[i] not in 'Csz':
+                        cands.discard(c)
+            elif cl == 'c' and nl in 'aouáóú':
+                for c in to_compare:
+                    if c[i] not in 'Ck':
+                        cands.discard(c)
+
+            elif cl == 's' and nl in 'eiéí':
+                for c in to_compare:
+                    if c[i] not in 'Scz':
+                        cands.discard(c)
+            elif cl == 's' and nl in 'aouáóú':
+                for c in to_compare:
+                    if c[i] not in 'Szk':
+                        cands.discard(c)
+
+        self.candidates = cands
+
+    def change_letters(self, word):
         candidates = set()
-        cf = self.cf
         change = {'v': ['b'], 'b': ['v'], 'c': ['s', 'z', 'k'],
                   's': ['c', 'z'], 'z': ['s', 'c'], 'll': ['y', 'sh'],
                   'y': ['ll', 'sh'], 'sh': ['ll', 'y'], 'x': ['ch'],
-                  'h': [''], 'k': ['c', 'qu']}
+                  'h': [''], 'k': ['c', 'qu'], 'qu': ['k']}
         for i in range(len(word)):
             cl = word[i]  # current word
             pair = word[i:i+2]  # pair of letters for 'll' and 'sh' cases
             for new in change.get(cl, {}):
                 cand1 = word[:i] + new + word[i+1:]
-                check, nword = cf.check(cand1)
-                if check:
-                    if nword != '':
-                        cand1 = nword
-                    candidates.add(cand1)
+                candidates.add(cand1)
             for new in change.get(pair, {}):
                 cand2 = word[:i] + new + word[i+2:]
-                check, nword = cf.check(cand2)
-                if check:
-                    if nword != '':
-                        cand2 = nword
-                    candidates.add(cand2)
-        self.candidates = self.candidates.union(candidates)
+                candidates.add(cand2)
+        return candidates
+
+    def spelling_error(self, word, n):
+        temp_cand = {word}
+        candidates = set()
+        f_candidates = set()
+        cf = self.cf
+        for _ in range(n):
+            changes = set()
+            for w in temp_cand:
+                words = self.change_letters(w)
+                changes = changes.union(words)
+            temp_cand = changes.copy()
+            candidates = candidates.union(changes)
+        for c in candidates:
+            check, nword = cf.check(c)
+            self.accent_mark(c)
+            if check:
+                if nword != '':
+                    c = nword
+                f_candidates.add(c)
+        self.candidates = self.candidates.union(f_candidates)
 
     def char_rep(self, word):
         cf = self.cf
@@ -90,6 +130,8 @@ class PrimaryCandidates(object):
                 cand = ''.join(cand_list).replace('-', '')
                 candidates.add(cand)
         for c in candidates:
+            self.spelling_error(c, self.n_errors)
+            self.accent_mark(c)
             check, nword = cf.check(c)
             if check:
                 if nword != '':
@@ -97,11 +139,11 @@ class PrimaryCandidates(object):
                 self.candidates.add(c)
 
     def all(self, word):
-        self.upper_lower(word)
-        self.spelling_error(word)
-        self.accent_mark(word)
         self.char_rep(word)
-
+        self.upper_lower(word)
+        self.spelling_error(word, self.n_errors)
+        self.accent_mark(word)
+        self.check_sound(word)
 
 class SecondaryCandidates(object):
     def __init__(self):
@@ -155,3 +197,14 @@ class SecondaryCandidates(object):
                     cand = nword
                 candidates.add(cand)
         self.candidates = self.candidates.union(candidates)
+
+for _ in range(5):
+    a = PrimaryCandidates(3)
+    inp = input()
+    a.all(inp)
+    c = a.candidates
+    print(c)
+    if c == set():
+        b = SecondaryCandidates()
+        b.edit_distance(inp)
+        print(b.candidates)
