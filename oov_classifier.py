@@ -1,6 +1,6 @@
+import enchant
 from Dictionaries.dicts import dicts
 from treetaggerwrapper import TreeTagger, make_tags
-
 
 class OOVclassifier(object):
 
@@ -42,3 +42,16 @@ class OOVclassifier(object):
     def check(self, word):
         d_lookup = self.dictionary_lookup(word)
         return (d_lookup[0] or self.affix_check(word), d_lookup[1])
+
+    def check_NoES(self, word):
+        d = enchant.Dict("en_EN")
+        return d.check(word)
+
+    def classify(self, word):
+        if self.check(word):
+            result = 1
+        elif self.NoES:
+            result = 2
+        else:
+            result = 0
+        return result

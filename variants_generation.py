@@ -2,6 +2,8 @@
 import re
 from oov_classifier import OOVclassifier
 
+# CORREGIR LO DE NOMBRES PROPIOS
+# FALTA ABREVIATURAS!!!
 
 class PrimaryCandidates(object):
 
@@ -147,13 +149,14 @@ class PrimaryCandidates(object):
                     word_pattern = nword
                 self.candidates.add(word_pattern)
 
-    def all(self, word):
-        self.char_rep(word)
-        for w in self.candidates:
-            self.spelling_error(w, self.n_errors)
-            # self.upper_lower(w)
-            self.accent_mark(w)
-            # self.check_sound(w)
+    def generate(self, word):
+        if word != '':
+            self.char_rep(word)
+            for w in self.candidates:
+                self.spelling_error(w, self.n_errors)
+                self.upper_lower(w)
+                self.accent_mark(w)
+                # self.check_sound(w)
 
 
 class SecondaryCandidates(object):
@@ -162,61 +165,75 @@ class SecondaryCandidates(object):
         self.cf = OOVclassifier()
 
     def edit_distance(self, word):
-        candidates = set()
-        cf = self.cf
-        n = len(word)
-        abc = 'abcdefghijklmnñopqrstuvwxyzáéíóú'
-        # abc = lcase[:14] + 'ñ' + lcase[14:] + 'áéíóú'
-        for i in range(n):
-            # delete i-th letter
-            cand = word[:i] + word[i+1:]
-            check, nword = cf.check(cand)
-            if check:
-                if nword != '':
-                    cand = nword
-                candidates.add(cand)
-            # swap i-th letter for i+1-th letter
-            if i > 0:
-                swap = word[i] + word[i-1]
-                cand = word[:i-1] + swap + word[i+1:]
+        if word != '':
+            candidates = set()
+            cf = self.cf
+            n = len(word)
+            abc = 'abcdefghijklmnñopqrstuvwxyzáéíóú'
+            # abc = lcase[:14] + 'ñ' + lcase[14:] + 'áéíóú'
+            for i in range(n):
+                # delete i-th letter
+                cand = word[:i] + word[i+1:]
                 check, nword = cf.check(cand)
                 if check:
                     if nword != '':
                         cand = nword
                     candidates.add(cand)
+                # swap i-th letter for i+1-th letter
+                if i > 0:
+                    swap = word[i] + word[i-1]
+                    cand = word[:i-1] + swap + word[i+1:]
+                    check, nword = cf.check(cand)
+                    if check:
+                        if nword != '':
+                            cand = nword
+                        candidates.add(cand)
+                for x in abc:
+                    # replace i-th letter for x
+                    cand = word[:i] + x + word[i+1:]
+                    check, nword = cf.check(cand)
+                    if check:
+                        if nword != '':
+                            cand = nword
+                        candidates.add(cand)
+                    # insert x in i-th position
+                    cand = word[:i] + x + word[i:]
+                    check, nword = cf.check(cand)
+                    if check:
+                        if nword != '':
+                            cand = nword
+                        candidates.add(cand)
             for x in abc:
-                # replace i-th letter for x
-                cand = word[:i] + x + word[i+1:]
+                # insert x at the end of word
+                cand = word + x
                 check, nword = cf.check(cand)
                 if check:
                     if nword != '':
                         cand = nword
                     candidates.add(cand)
-                # insert x in i-th position
-                cand = word[:i] + x + word[i:]
-                check, nword = cf.check(cand)
-                if check:
-                    if nword != '':
-                        cand = nword
-                    candidates.add(cand)
-        for x in abc:
-            # insert x at the end of word
-            cand = word + x
-            check, nword = cf.check(cand)
-            if check:
-                if nword != '':
-                    cand = nword
-                candidates.add(cand)
-        self.candidates = self.candidates.union(candidates)
+            self.candidates = self.candidates.union(candidates)
+
+    def generate(self, word):
+        self.edit_distance(word)
 
 
 for _ in range(5):
     a = PrimaryCandidates(2)
     inp = input()
-    a.all(inp)
+    a.generate(inp)
     c = a.candidates
-    # print(c)
+    print(c)
     if c == set():
         b = SecondaryCandidates()
         b.edit_distance(inp)
-        # print("Second:", b.candidates)
+        print("Second:", b.candidates)
+
+
+# esCUELA
+# eessccuueell
+# nombres problems
+# risas terminadas en j o empezadas en vocal
+# NoES
+# Que doy de resultado??
+# Reensamblar tweets
+# caso Loc

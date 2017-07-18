@@ -5,11 +5,11 @@ from nltk.tokenize import TweetTokenizer, sent_tokenize
 
 class OOVpicker(object):
 
-    def __init__(self):
+    def __init__(self, tweets_file):
         twt = TweetTokenizer()
         known_word = enchant.Dict("es_ES")
         OOV = defaultdict(lambda: defaultdict(list))
-        file = open('Tweets/tweet2.txt', 'r')
+        file = open(tweets_file, 'r')
         # split tweets by tweet separator
         tweets = file.read().split('---|||---|||---')
         for i, tweet in enumerate(tweets):
