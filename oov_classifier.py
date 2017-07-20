@@ -20,20 +20,29 @@ class OOVclassifier(object):
             self.tagger = TreeTagger(TAGLANG='es', TAGDIR=path)
 
     def dictionary_lookup(self, word):
-        return word in self.SD or word in self.PND or word in self.ND.values()
+        result = (word in self.SD or
+                  word in self.PND or
+                  word in self.ND.values())
+        return result
 
     def affix_check(self, word):
         result = False
         if word.islower() or word.istitle():
             if self.stem:
-                to_check = self.stemmer.stem(word)
+                n = len(word)
+                stem = self.stemmer.stem(word)
+                # compare with first substring of length n of each word in SD
+                for w in [x[:n] for x in self.SD if len(x) >= n]:
+                    result = (word == w)
+                    if result:
+                        break
             else:
-                to_check = make_tags(self.tagger.tag_text(word))[0].lemma
-            result = self.dictionary_lookup(to_check)[0]
+                lemma = make_tags(self.tagger.tag_text(word))[0].lemma
+                result = self.dictionary_lookup(lemma)
         return result
 
     def check(self, word):
-        result = spanish_dict.check(word)
+        result = self.spanish_dict.check(word)
         if not result:
             result = self.dictionary_lookup(word) or self.affix_check(word)
         return result

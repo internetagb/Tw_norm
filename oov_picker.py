@@ -19,11 +19,12 @@ class OOVpicker(object):
                 # enumerate sent to know word's position
                 e = enumerate(sent)
                 # list of (word, pos) where word is alphanumeric and not digit
-                wp_list = [(word, pos) for pos, word in e if (word.isalnum() and
-                                                  not word.isdigit())]
+                wp_list = [(word, pos) for pos, word in e
+                            if (word.isalnum() and not word.isdigit())]
                 for word, pos in wp_list:
                     # check if word is In Vocabulary
                     if not known_word.check(word):
-                        # add (word, pos) at j-th sent of i-th tweet
+                        # add (word, pos) to j-th sent
+                        # of tweet with id = tweet_id
                         OOV[tweet_id][j].append((word, pos))
         self.OOV = dict(OOV)

@@ -1,13 +1,13 @@
 from collections import defaultdict
 import pickle
 
+
 class Selector(object):
 
     def __init__(self, model):
         """
         model -- n-gram model.
         """
-
         # create structures
         print("Init Selector")
         self.probs = probs = defaultdict(dict)
