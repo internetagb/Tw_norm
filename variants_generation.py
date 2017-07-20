@@ -16,14 +16,15 @@ class PrimaryCandidates(object):
         candidates = set()
         cf = self.cf
         cands = []
-        if word.islower():
+        """if word.islower():
             cands = [word.upper(), word.title()]
         elif word.isupper():
             cands = [word.lower(), word.title()]
         elif word.istitle():
             cands = [word.lower(), word.upper()]
         else:
-            cands = [word.lower(), word.upper(), word.title()]
+            cands = [word.lower(), word.upper(), word.title()]"""
+        cands = [word.lower(), word.upper(), word.title()]
         for c in cands:
             check, nword = cf.check(c)
             if check:
@@ -216,7 +217,6 @@ class SecondaryCandidates(object):
     def generate(self, word):
         self.edit_distance(word)
 
-
 for _ in range(5):
     a = PrimaryCandidates(2)
     inp = input()
@@ -230,10 +230,8 @@ for _ in range(5):
 
 
 # esCUELA
-# eessccuueell
 # nombres problems
 # risas terminadas en j o empezadas en vocal
-# NoES
 # Que doy de resultado??
 # Reensamblar tweets
 # caso Loc

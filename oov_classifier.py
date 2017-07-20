@@ -1,56 +1,50 @@
 import enchant
 from Dictionaries.dicts import dicts
 from treetaggerwrapper import TreeTagger, make_tags
+from nltk.stem.snowball import SpanishStemmer
 
 class OOVclassifier(object):
 
-    def __init__(self):
+    def __init__(self, stem=False):
         dictionaries = dicts()
-        path = '/home/alangb/TWPP'
-        self.ND = dictionaries.norm.copy()
-        self.SD = dictionaries.lemario.copy()
-        # self.VD = dictionaries.verbs.copy()
-        self.PND = dictionaries.names.copy()
-        self.tagger = TreeTagger(TAGLANG='es', TAGDIR=path)
+        path = '/home/alangb/TWPP'  # path to TreeTagger installation directory
+        self.english_dict = enchant.Dict("en_EN")
+        self.spanish_dict = enchant.Dict("es_ES")
+        self.ND = dictionaries.norm
+        self.SD = dictionaries.lemario
+        self.PND = dictionaries.names
+        self.stem = stem
+        if stem:
+            self.stemmer = SpanishStemmer()
+        else:
+            self.tagger = TreeTagger(TAGLANG='es', TAGDIR=path)
 
     def dictionary_lookup(self, word):
-        if word == '':
-            result = False
-            nd = ''
-        else:
-            key = word[0]
-            nd = ''
-            if word in self.ND.keys():
-                result = True
-                nd = self.ND[word]
-            else:
-                result = (word in self.SD.get(key, {})
-                          or word in self.PND.get(key, {})
-                          # or word in self.VD.get(key, {})
-                          )
-        return (result, nd)
+        return word in self.SD or word in self.PND or word in self.ND.values()
 
     def affix_check(self, word):
         result = False
         if word.islower() or word.istitle():
-            lemma = make_tags(self.tagger.tag_text(word))[0].lemma
-            result = self.dictionary_lookup(lemma)[0]
-        # print("el lema de", word, "es:", lemma)
+            if self.stem:
+                to_check = self.stemmer.stem(word)
+            else:
+                to_check = make_tags(self.tagger.tag_text(word))[0].lemma
+            result = self.dictionary_lookup(to_check)[0]
         return result
-        # return False
 
     def check(self, word):
-        d_lookup = self.dictionary_lookup(word)
-        return (d_lookup[0] or self.affix_check(word), d_lookup[1])
+        result = spanish_dict.check(word)
+        if not result:
+            result = self.dictionary_lookup(word) or self.affix_check(word)
+        return result
 
     def check_NoES(self, word):
-        d = enchant.Dict("en_EN")
-        return d.check(word)
+        return self.english_dict.check(word)
 
     def classify(self, word):
         if self.check(word):
             result = 1
-        elif self.NoES:
+        elif self.check_NoES(word):
             result = 2
         else:
             result = 0

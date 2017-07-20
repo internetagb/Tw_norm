@@ -1,3 +1,4 @@
+100pre:siempre
 a2:adiós
 abzo:abrazo
 ahy:ahí
@@ -41,8 +42,6 @@ enqntro:encuentro
 entrda:entrada
 esq:es_que
 exam:examen
-fa:favor
-fin:final
 finde:fin_de_semana
 firm:firme
 flidads:felicidades
@@ -158,7 +157,6 @@ tqm:te_quiero_mucho
 trd:tarde
 tv:televisión
 tvl:te_veo_luego
-u:tú
 vac:vacaciones
 vmos:vemos
 vms:vemos
@@ -168,7 +166,6 @@ wpa:guapa
 x:por
 xa:para
 xam:examen
-xat:chat
 xat:chat
 xatr:chatear
 xclnt:excelente

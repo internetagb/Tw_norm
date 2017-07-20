@@ -15,33 +15,19 @@ class dicts(object):
         for use, correct in [line.split(':') for line in lines]:
             d[use] = correct
         normfile.close()
+        self.norm = dict(d)
 
-        # create dict of all verbs (infinitive + conjugated)
-        v = defaultdict(set)
-        verbsfile = open(filepath + 'verbs.txt', 'r')
-        lines = verbsfile.read().split('\n')
-        for word in lines:
-            v[word[0]].add(word)
-        verbsfile.close()
-
-        # create dict of spanish names
-        n = defaultdict(set)
+        # create set of spanish names
         namesfile = open(filepath + 'proper_nouns.txt', 'r')
         lines = namesfile.read().split('\n')
-        for word in lines:
-            n[word[0]].add(word)
-        namesfile.close()
+        self.names = {word for word in lines}
 
-        # create dict of spanish lemario
-        l = defaultdict(set)
+        # create set of spanish lemario
         lemfile = open(filepath + 'lemario.txt', 'r')
         lines = lemfile.read().split('\n')
-        for word in lines:
-            l[word[0]].add(word)
-        lemfile.close()
+        self.lemario = {word for word in lines}
 
-        # set class attributes
-        self.norm = dict(d)
-        self.verbs = dict(v)
-        self.lemario = dict(l)
-        self.names = dict(n)
+        # add a set of all verbs (infinitive + conjugated) to lemario
+        verbsfile = open(filepath + 'verbs.txt', 'r')
+        lines = verbsfile.read().split('\n')
+        self.lemario = self.lemario.union({word for word in lines})

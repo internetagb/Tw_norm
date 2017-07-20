@@ -2,7 +2,7 @@ from os import path
 from oov_picker import OOVpicker
 from oov_classifier import OOVclassifier
 from variants_generation import PrimaryCandidates, SecondaryCandidates
-# from candidate_selection import Selector
+from candidate_selection import Selector
 
 tweets_file = path.split(path.abspath(__file__))[0] + '/Tweets/tweet2.txt'
 
@@ -10,9 +10,9 @@ picker = OOVpicker(tweets_file)
 classifier = OOVclassifier()
 primary = PrimaryCandidates()
 secondary = SecondaryCandidates()
-# selector = Selector()
+selector = Selector()
 oovs = picker.OOV
-correct = oovs.copy()
+correct = defaultdict(dict)
 
 for i, tweet in oovs.items():
     for j, sent in tweet.items():

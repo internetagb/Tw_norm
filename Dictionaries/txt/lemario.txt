@@ -1,4 +1,81 @@
 a
+y
+ah
+aj
+al
+ál
+AM
+as
+ay
+be
+bu
+CD
+cu
+de
+dí
+do
+eh
+el
+él
+en
+ex
+fa
+fe
+fi
+fo
+fu
+ge
+ha
+he
+hi
+hí
+ir
+ja
+je
+ji
+jo
+ju
+ka
+la
+le
+lo
+LP
+me
+mi
+mí
+mu
+ni
+no
+ñu
+oa
+oh
+os
+pe
+pH
+pi
+re
+Rh
+ro
+se
+si
+sí
+su
+ta
+te
+té
+ti
+tu
+tú
+uf
+uh
+un
+uy
+ve
+xi
+ya
+ye
+yo
+za
 aarónico
 aaronita
 aba
@@ -1247,7 +1324,6 @@ aclorhidria
 aclorhídrico
 acmé
 acné
-‒́aco
 acobambino
 acobardado
 acobardamiento
@@ -1714,7 +1790,6 @@ acutángulo
 acutí
 acuto
 acuyo
-ad
 adacilla
 adafina
 adagial
@@ -3073,7 +3148,6 @@ aguzanieves
 aguzar
 aguzo
 aguzonazo
-ah
 ahacado
 ahajar
 ahé
@@ -3260,7 +3334,6 @@ aité
 aitinal
 aizcolari
 aizoáceo
-aj
 aja
 ajá
 ajabeba
@@ -3390,8 +3463,6 @@ ajusticiamiento
 ajusticiar
 ajustón
 akalché
-al
-ál
 ala
 alá
 Alá
@@ -5208,7 +5279,6 @@ alzar
 Alzheimer
 alzhéimer
 alzo
-AM
 ama
 amabilidad
 amable
@@ -7970,7 +8040,6 @@ aquitánico
 aquitano
 aquivo
 a quo
-ar
 ara
 árabe
 arabesco
@@ -9131,7 +9200,6 @@ arzobispal
 arzobispo
 arzolla
 arzón
-as
 asa
 asaborado
 asaborar
@@ -10702,7 +10770,6 @@ avuguero
 avulsión
 avutarda
 avutardado
-ax
 áxcale
 axénico
 axial
@@ -10723,7 +10790,6 @@ axis
 axoideo
 axón
 axonometría
-ay
 ayacahuite
 ayacaste
 ayaco
@@ -12198,7 +12264,6 @@ bazuco
 bazuquear
 bazuqueo
 bazuquero
-be
 beaciense
 beamontés
 bearnés
@@ -14312,7 +14377,6 @@ bruzador
 bruzar
 bruzas
 bruzos
-bu
 búa
 buaro
 buba
@@ -18459,8 +18523,6 @@ cazurrería
 cazurría
 cazurro
 cazuz
-CD
-ce
 cea
 ceaja
 ceajo
@@ -19301,7 +19363,6 @@ ceutí
 ceviche
 cevichería
 cevichero
-ch
 cha
 chabacanada
 chabacanería
@@ -20489,7 +20550,6 @@ chivo
 chivón
 chivudo
 chiza
-cho
 choapino
 choba
 choca
@@ -22244,7 +22304,6 @@ cojutepequense
 cok
 col
 cola
-‒́cola
 colaboración
 colaboracionista
 colaborador
@@ -25610,7 +25669,6 @@ crasiento
 crasitud
 craso
 crasuláceo
-‒́crata
 cráter
 crátera
 crateriforme
@@ -26023,7 +26081,6 @@ cruzador
 cruzamiento
 cruzar
 ctenóforo
-cu
 cuaba
 cuache
 cuaco
@@ -27135,7 +27192,6 @@ davídico
 daza
 dazibao
 DDT
-de
 dea
 deal
 deambulación
@@ -31156,7 +31212,6 @@ dezmatorio
 dezmeño
 dezmería
 dezmero
-dí
 día
 diabasa
 diabático
@@ -32172,7 +32227,6 @@ diyambo
 dizque
 DNA
 DNI
-do
 dóberman
 dobla
 doblada
@@ -33045,7 +33099,6 @@ egresar
 egresión
 egreso
 eguar
-eh
 eibarrés
 eidético
 eidetismo
@@ -33092,8 +33145,6 @@ ejidatario
 ejido
 ejión
 ejote
-el
-él
 elaborable
 elaboración
 elaborado
@@ -34133,7 +34184,6 @@ emulsor
 emunción
 emundación
 emuntorio
-en
 enaceitar
 enacerar
 enaciado
@@ -36444,7 +36494,6 @@ enzurdecer
 enzurizar
 enzurronar
 enzurronarse
-‒́eo
 eocénico
 eoceno
 eólico
@@ -38999,7 +39048,6 @@ esvarar
 esvarón
 esvástica
 esviaje
-et
 eta
 etalaje
 etamina
@@ -39232,7 +39280,6 @@ evolucionismo
 evolucionista
 evolutivo
 evónimo
-ex
 exabrupto
 ex abrupto
 exacción
@@ -39851,7 +39898,6 @@ eyectar
 eyector
 ezquerdear
 ezquite
-fa
 faba
 fabada
 fabianismo
@@ -40472,7 +40518,6 @@ fazaleja
 fazaña
 fazferir
 fazoleto
-fe
 fealdad
 feamente
 febeo
@@ -40650,7 +40695,6 @@ fermosura
 Fernambuco
 fernandina
 fernandino
-‒́fero
 ferocidad
 ferodo
 feróstico
@@ -40768,7 +40812,6 @@ feudatario
 feudo
 feúra
 fez
-fi
 fía
 fiabilidad
 fiable
@@ -40811,7 +40854,6 @@ ficha
 fichaje
 fichar
 fichero
-‒́fico
 ficoideo
 ficticio
 fictivo
@@ -41487,10 +41529,8 @@ fluxible
 fluxímetro
 fluxión
 fluyente
-fo
 fobia
 fóbico
-‒́fobo
 foca
 focal
 focalización
@@ -41766,7 +41806,6 @@ fornir
 fornitura
 forno
 foro
-‒́foro
 forofo
 forqueta
 forración
@@ -42390,7 +42429,6 @@ frutillar
 frutillero
 fruto
 frutuoso
-fu
 fua
 fuácata
 fuagrás
@@ -42445,7 +42483,6 @@ fugible
 fúgido
 fugir
 fugitivo
-‒́fugo
 fuguillas
 fuidizo
 fuimiento
@@ -43565,7 +43602,6 @@ gazpachero
 gazpacho
 gazpachuelo
 gazuza
-ge
 gea
 gecónido
 gehena
@@ -43669,7 +43705,6 @@ genitura
 geniudo
 genízaro
 geno
-‒́geno
 genocida
 genocidio
 genol
@@ -44224,7 +44259,6 @@ gongorismo
 gongorista
 gongorizar
 goniómetro
-‒́gono
 gonococia
 gonocócico
 gonococo
@@ -44377,7 +44411,6 @@ gradiente
 gradilla
 gradíolo
 grado
-‒́grado
 gradoso
 graduable
 graduación
@@ -44404,7 +44437,6 @@ grafitero
 grafiti
 grafito
 grafo
-‒́grafo
 grafología
 grafológico
 grafólogo
@@ -45534,7 +45566,6 @@ guzla
 guzmán
 guzpátaro
 guzpatarra
-ha
 haba
 habado
 habanera
@@ -45869,7 +45900,6 @@ hazañero
 hazañosamente
 hazañoso
 hazmerreír
-he
 hebdómada
 hebdomadariamente
 hebdomadario
@@ -46381,8 +46411,6 @@ hexápodo
 hexasílabo
 hexástilo
 hez
-hi
-hí
 hialino
 hialoideo
 hiante
@@ -47712,7 +47740,6 @@ icneumón
 icnografía
 icnográfico
 icnología
-‒́ico
 icónico
 icono
 iconoclasia
@@ -47797,7 +47824,6 @@ idiotipo
 idiotismo
 idiotizar
 ido
-‒́ido
 idólatra
 idolatrar
 idolatría
@@ -47875,7 +47901,6 @@ ijujú
 ikastola
 ikebana
 ikurriña
-‒́il
 ilación
 ilapso
 ilativo
@@ -48328,7 +48353,6 @@ imputador
 imputar
 imputrescible
 imputrible
-in
 inabarcable
 inabordable
 inacabable
@@ -50523,7 +50547,6 @@ ipso iure
 iqueño
 iquiqueño
 iquiteño
-ir
 ira
 iracundia
 iracundo
@@ -50818,7 +50841,6 @@ izquierdismo
 izquierdista
 izquierdo
 izquierdoso
-ja
 jaba
 jabado
 jabalcón
@@ -51171,7 +51193,6 @@ jazminero
 jazz
 jazzista
 jazzístico
-je
 jea
 jebe
 jebuseo
@@ -51269,7 +51290,6 @@ jetonada
 jetonear
 jet set
 jetudo
-ji
 jíbaro
 jibe
 jibia
@@ -51382,7 +51402,6 @@ jitomatal
 jitomate
 jitomatera
 jitomatero
-jo
 Job
 jobada
 jobar
@@ -51492,7 +51511,6 @@ joyero
 joyo
 joyón
 joyosa
-ju
 juácata
 juagarzo
 juan
@@ -51765,7 +51783,6 @@ juzgaduría
 juzgamiento
 juzgamundos
 juzgar
-ka
 kaaguaseño
 kaakupeño
 kaasapeño
@@ -51864,7 +51881,6 @@ kris
 kurchatovio
 kurdo
 kuwaití
-la
 lábaro
 labe
 labeo
@@ -52617,7 +52633,6 @@ lazradamente
 lazrador
 lazrar
 lazulita
-le
 leal
 lealdad
 lealmente
@@ -53522,7 +53537,6 @@ lisimaquia
 lisina
 lisión
 lisis
-‒́lisis
 lislique
 liso
 lisol
@@ -53635,7 +53649,6 @@ lixiviación
 lixiviar
 liza
 lizo
-ll
 llábana
 llaca
 llaga
@@ -53764,7 +53777,6 @@ lluvia
 lluvial
 lluviano
 lluvioso
-lo
 loa
 loable
 loablemente
@@ -53871,7 +53883,6 @@ logis
 logista
 logística
 logístico
-‒́logo
 logogrífico
 logogrifo
 logomaquia
@@ -54029,7 +54040,6 @@ lozanear
 lozanecer
 lozanía
 lozano
-LP
 LSD
 lúa
 lubigante
@@ -55445,7 +55455,6 @@ manjuarí
 manlevar
 manlieva
 mano
-‒́mano
 maño
 manobre
 manobrero
@@ -56440,7 +56449,6 @@ mazorralmente
 mazuelo
 mazurca
 mbayá
-me
 mea
 mea culpa
 meada
@@ -57367,7 +57375,6 @@ metrificatura
 metrista
 metritis
 metro
-‒́metro
 metrología
 metrónomo
 metrópoli
@@ -57410,8 +57417,6 @@ mezquite
 mezzo
 mezzoforte
 mezzosoprano
-mi
-mí
 mía
 miador
 miagar
@@ -59079,7 +59084,6 @@ mozorro
 mozote
 mozuelo
 mozzarella
-mu
 muaré
 muble
 muca
@@ -59513,8 +59517,6 @@ mutuo
 muy
 muy muy
 muzárabe
-na
-ña
 naba
 nabab
 nababo
@@ -59874,7 +59876,6 @@ nazi
 nazismo
 názora
 názula
-ne
 nea
 neapolitano
 nébeda
@@ -60269,7 +60270,6 @@ nevus
 newton
 newtoniano
 nexo
-ni
 nía
 nial
 niara
@@ -60439,8 +60439,6 @@ nixtamalero
 nixte
 nizardo
 ñizca
-no
-ño
 nobel
 nobelio
 nobiliario
@@ -60744,7 +60742,6 @@ novomejicano
 novomexicano
 noxa
 noyó
-ñu
 nubada
 nubado
 nubarrada
@@ -60878,7 +60875,6 @@ nutritivo
 nutriz
 nutual
 ñuzco
-oa
 oasis
 oaxaqueño
 obcecación
@@ -61059,7 +61055,6 @@ obviar
 obviedad
 obvio
 obyecto
-oc
 oca
 ocal
 ocalear
@@ -61303,7 +61298,6 @@ ofuscar
 ogaño
 ogresa
 ogro
-oh
 ohm
 óhmico
 ohmímetro
@@ -62025,7 +62019,6 @@ orzar
 orzaya
 orzoyo
 orzuelo
-os
 osa
 osadamente
 osadía
@@ -62234,7 +62227,6 @@ ovovivíparo
 ovulación
 ovular
 óvulo
-ox
 oxalato
 oxálico
 oxalidáceo
@@ -63505,7 +63497,6 @@ parnasiano
 parnaso
 parné
 paro
-‒́paro
 parodia
 parodiador
 parodiar
@@ -64121,7 +64112,6 @@ pazo
 pazote
 pazpuerca
 pche
-pe
 pea
 peaje
 peajero
@@ -64279,7 +64269,6 @@ pedinche
 pedio
 pedir
 pedo
-‒́pedo
 pedofilia
 pedófilo
 pedorra
@@ -65530,8 +65519,6 @@ pezpita
 pezpítalo
 pezuelo
 pezuña
-pH
-pi
 pía
 piache
 piada
@@ -69178,7 +69165,6 @@ pterodáctilo
 ptialina
 ptolemaico
 ptosis
-pu
 púa
 puado
 puar
@@ -70800,7 +70786,6 @@ razonador
 razonal
 razonamiento
 razonar
-re
 rea
 reabierto
 reabrir
@@ -73539,7 +73524,6 @@ rezumadero
 rezumar
 rezura
 rezurcir
-Rh
 ria
 ría
 riacho
@@ -73767,7 +73751,6 @@ rizón
 rizópodo
 rizoso
 RNA
-ro
 roa
 roanés
 roano
@@ -75726,7 +75709,6 @@ sazonado
 sazonador
 sazonar
 scooter
-se
 sebáceo
 sebado
 sebastiano
@@ -76640,8 +76622,6 @@ sheriff
 sherpa
 shuar
 shunte
-si
-sí
 sialismo
 siamés
 sian
@@ -77229,7 +77209,6 @@ siutiquería
 sizigia
 slip
 SMS
-so
 soalzar
 soasar
 soba
@@ -78210,7 +78189,6 @@ statu quo
 stop
 stricto sensu
 striptease
-su
 suabo
 suadir
 suajili
@@ -79036,7 +79014,6 @@ suversión
 suyate
 suyo
 suzón
-ta
 taba
 tabacal
 tabacalero
@@ -79982,8 +79959,6 @@ tazaña
 tazar
 tazmía
 tazón
-te
-té
 tea
 teáceo
 teame
@@ -80940,7 +80915,6 @@ tez
 tezado
 tezcucano
 tezontle
-ti
 tiaca
 tiahuanacota
 tialina
@@ -80973,7 +80947,6 @@ ticera
 ticero
 ticinense
 tico
-‒́tico
 ticónico
 tictac
 ticuco
@@ -81406,7 +81379,6 @@ tlapalero
 tlaxcalteca
 tlazol
 TNT
-to
 toa
 toalla
 toallero
@@ -83299,7 +83271,6 @@ trocoide
 trócola
 trofeo
 trófico
-‒́trofo
 trofología
 trofólogo
 troglodita
@@ -83510,8 +83481,6 @@ trust
 trutro
 trutuca
 tsunami
-tu
-tú
 tuani
 tuanis
 tuareg
@@ -83876,7 +83845,6 @@ ucrónico
 ucubitano
 udómetro
 uebos
-uf
 ufa
 ufanamente
 ufanarse
@@ -83893,7 +83861,6 @@ ugandés
 ugetista
 ugre
 ugrofinés
-uh
 ujier
 ujú
 újule
@@ -83982,7 +83949,6 @@ umbro
 umbroso
 umero
 umjú
-un
 una
 uña
 uñada
@@ -84257,6 +84223,7 @@ usurpación
 usurpador
 usurpar
 uta
+UTC
 utensilio
 uterino
 útero
@@ -84302,7 +84269,6 @@ uvillo
 uvular
 uxoricida
 uxoricidio
-uy
 uyunense
 uzbeko
 uzo
@@ -84704,7 +84670,6 @@ vatímetro
 vatio
 vaupense
 vaya
-ve
 vecera
 vecería
 vecero
@@ -86142,7 +86107,6 @@ vorahúnda
 voraz
 vorazmente
 vormela
-‒́voro
 vórtice
 vortiginoso
 vos
@@ -86258,7 +86222,6 @@ xerografiar
 xerográfico
 xerógrafo
 xeroteca
-xi
 xicaque
 xifoideo
 xifoides
@@ -86280,7 +86243,6 @@ xocoatole
 xocoyote
 xola
 xolo
-ya
 yaacabó
 yaba
 yabuna
@@ -86357,7 +86319,6 @@ yauyino
 yaxché
 yaya
 yayo
-ye
 yebo
 yeclano
 yeco
@@ -86430,7 +86391,6 @@ yin
 yina
 yira
 yiro
-yo
 yod
 yodación
 yodado
@@ -86520,7 +86480,6 @@ yuyería
 yuyero
 yuyo
 yuyuba
-za
 zabalmedina
 zabarcera
 zabatán
