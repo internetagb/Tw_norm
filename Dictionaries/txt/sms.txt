@@ -51,6 +51,7 @@ gnrcn:generación
 gnt:gente
 gral%:generalmente
 gral:general
+grax:gracias
 grdo:gordo
 grda:gorda
 grduar:graduar
@@ -143,6 +144,7 @@ tas:estás
 tasok:estás_bien
 tb:también
 tbj:trabajo
+tds:todos
 thanx:gracias
 tjt:tarjeta
 tki:tengo_que_irme
