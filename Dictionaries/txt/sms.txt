@@ -30,7 +30,6 @@ cn:con
 d:de
 dbria:debería
 dcir:decir
-dd:días
 dicnario:diccionario
 dir:dirección
 dnd:donde
@@ -186,3 +185,5 @@ zibrar:celebrar
 zntral:central
 zntro:centro
 zzz:me_duermo
+rt:retweet
+rtr:retwittear

@@ -1,60 +1,53 @@
-from collections import defaultdict
 import pickle
+from nltk.data import load
 
 
 class Selector(object):
 
-    def __init__(self, model):
+    def __init__(self):
         """
         model -- n-gram model.
         """
-        # create structures
-        print("Init Selector")
-        self.probs = probs = defaultdict(dict)
-        self.sorted_probs = sorted_probs = defaultdict(dict)
-        self.n = n = model.n
-        counts = model.counts
-        # initialize structures
-        for words in counts.keys():
-            if len(words) == n:
-                token = words[n-1]
-                prev_tokens = words[:n-1]
-                if prev_tokens not in probs:
-                    probs.update({prev_tokens: defaultdict(dict)})
-                    sorted_probs.update({prev_tokens: []})
-                current_prob = model.cond_prob(token, list(prev_tokens))
-                probs[prev_tokens].update({token: current_prob})
-                sorted_probs[prev_tokens].append((token, current_prob))
-                sorted_probs[prev_tokens] = sorted(sorted_probs[prev_tokens],
-                                                   key=lambda x: (-x[1], x[0]))
-        print("Finish Init")
+        path = '/home/alangb/Escritorio/bo3'
+        # open model file
+        file = open(path, 'rb')
+        # load model file
+        model = pickle.load(file)
+
+        self.model = model
+        self.n = model.n
 
     def choose(self, prev_tokens, candidates):
-        assert len(prev_tokens) == self.n - 1
-        winner = list(candidates)[0]
-        pairs = self.sorted_probs.get(prev_tokens, [])
-        if pairs != []:
-            tokens, probs = zip(*pairs)
-            max_prob = 0.0
-            for i in range(len(tokens)):
-                c_token = tokens[i]
-                c_prob = probs[i]
-                if c_token in candidates and c_prob > max_prob:
-                    max_prob = probs[i]
-                    winner = c_token
+        """
+            return the most probable next token for prev_tokens
+        """
+        model = self.model
+        cands = list(candidates)
+        probs = [model.cond_prob(c, prev_tokens) for c in cands]
+        max_prob = max(probs)
+        index = probs.index(max_prob)
+        winner = cands[index]
+
         return winner
 
-# open model file
-path = '/home/alangb/Escritorio/ngram2'
-file = open(path, 'rb')
-# load model file
-model = pickle.load(file)
-print("Finish pickle")
-selector = Selector(model)
-print("Finish Selector")
-while 1:
-    input1 = (input(),)
-    input2 = input().split(' ')
-    input2 = {x for x in input2}
-    selection = selector.choose(input1, input2)
-    print(selection)
+    def prev_tokens(self, pair, tokenized):
+        n = self.n
+        index = tokenized.index(pair)
+        prev_tokens = tuple()
+        for i in range(index - n + 1, index):
+            if i < 0:
+                prev_tokens += ('<s>',)
+            else:
+                prev_tokens += (tokenized[i][0],)
+        return prev_tokens
+
+
+# if __name__ == '__main__':
+#     selector = Selector(model)
+
+#     for _ in range(5):
+#         inp1 = input("ingrese prev tokens: ")
+#         prev_tokens = tuple(inp1.split(','))
+#         inp2 = input("ingrese candidates: ")
+#         candidates = set(inp2.split(','))
+#         print(selector.choose(prev_tokens, candidates))

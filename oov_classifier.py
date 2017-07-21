@@ -48,7 +48,10 @@ class OOVclassifier(object):
         return result
 
     def check_NoES(self, word):
-        return self.english_dict.check(word)
+        result = False
+        if len(word) > 1:
+            result = self.english_dict.check(word)
+        return result
 
     def classify(self, word):
         if self.check(word):

@@ -53,17 +53,20 @@ class PrimaryCandidates(object):
         """
         candidates = set()
         # 1 for a o u next letter cases, 2 for e i next letter cases
+        # 3 for c or s previous to h
         change = {'v': ['b'], 'b': ['v'], 'c1': ['k'], 'c2': ['s', 'z'],
                   's1': ['z'], 's2': ['c', 'z'], 'z1': ['s'], 'z2' : ['c', 's'],
                   'll': ['y', 'sh'], 'y': ['ll', 'sh'], 'sh': ['ll', 'y'],
-                  'x': ['ch'], 'h': [''], 'k1': ['c'], 'k2': ['qu'],
+                  'x': ['ch'], 'h3': [''], 'k1': ['c'], 'k2': ['qu'],
                   'qu': ['k'], 'j': ['g'], 'g': ['j']}
         for i in range(len(word)-1):
             pair = word[i:i+2]  # pair of letters
             # get values of pair's first letter in "change dict"
             if not pair[1].isdigit():  # avoid if word contains c1, z2, etc
                 key = pair[0]
-                if key not in change.keys() and pair[1] in 'aou':
+                if key == 'h' and i > 0 and word[i-1] not in 'cs':
+                    key += '3'
+                elif key not in change.keys() and pair[1] in 'aou':
                     key += '1'
                 elif key not in change.keys() and pair[1] in 'ei':
                     key += '2'
@@ -141,7 +144,7 @@ class PrimaryCandidates(object):
                 cand = ''.join(cand_list).replace('-', '')
                 candidates.add(cand)
                 # with two pairs repeated
-                hyphens = [j for j in range(i, n) if cand_list[j] == '-']
+                hyphens = [j for j in range(i, n - 1) if cand_list[j] == '-']
                 for j in hyphens:
                     cand_list2 = cand_list[:j] + [word[j]] + cand_list[j:]
                     cand = ''.join(cand_list2).replace('-', '')
@@ -168,39 +171,56 @@ class PrimaryCandidates(object):
             result.add(w)
         return result
 
+    def filter_candidates(self, cands):
+        """
+            return set of IV candidates
+        """
+        candidates = set()
+        cf = self.cf
+        for w in cands:
+            if w in cf.ND.keys():
+                candidates.add(cf.ND[w])
+            if cf.check(w):
+                candidates.add(w)
+        return candidates
+
     def generate(self, word):
         """
             return a set of primary candidates
         """
-        candidates = set()
-        a, b, c = set(), set(), set()
+        a, b, cands, candidates = set(), set(), set(), set()
         if word != '':
             reps = self.all_reps(word)
             for w in reps:
-                a = a.union(set(self.upper_lower(w)))
+                cands.add(w)
+                upper_lower = set(self.upper_lower(w))
+                cands = cands.union(upper_lower)
+                a = a.union(upper_lower)
                 for wd in a:
-                    b = b.union(self.accent_mark(wd))
+                    accent_mark = self.accent_mark(wd)
+                    b = b.union(accent_mark)
+                    cands = cands.union(accent_mark)
                     for ww in b:
-                        c = c.union(self.spelling_error(ww, self.n_errors))
-
+                        spelling_error = self.spelling_error(ww, self.n_errors)
+                        cands = cands.union(spelling_error)
             # filter cands_tmp (only leaves correct words)
-            for w in c:
-                if self.cf.check(w):
-                    candidates.add(w)
+            candidates = self.filter_candidates(cands)
+
         return candidates
 
 
 class SecondaryCandidates(object):
     def __init__(self):
-        self.cf = OOVclassifier()
+        self.helper = PrimaryCandidates(2)
+        self.cf = self.helper.cf
 
     def edit_distance(self, word):
-        if word != '':
-            candidates = set()
-            cf = self.cf
-            n = len(word)
-            abc = 'abcdefghijklmnñopqrstuvwxyzáéíóú'
-            # abc = lcase[:14] + 'ñ' + lcase[14:] + 'áéíóú'
+        candidates = set()
+        cf = self.cf
+        n = len(word)
+        abc = 'abcdefghijklmnñopqrstuvwxyzáéíóú'
+        # abc = lcase[:14] + 'ñ' + lcase[14:] + 'áéíóú'
+        if n > 1:
             for i in range(n):
                 # delete i-th letter
                 cand = word[:i] + word[i+1:]
@@ -221,32 +241,38 @@ class SecondaryCandidates(object):
                     cand = word[:i] + x + word[i:]
                     if cf.check(cand):
                         candidates.add(cand)
-            for x in abc:
-                # insert x at the end of word
-                cand = word + x
+        for x in abc:
+            # insert x at the end of word
+            cand1, cand2 = word + x, x + word
+            for cand in [cand1, cand2]:
                 if cf.check(cand):
                     candidates.add(cand)
-            return candidates
-
-    def generate(self, word):
-        # agregar algo de rep
-        candidates = self.edit_distance(word)
         return candidates
 
-a = PrimaryCandidates(2)
-inp = input("Ingrese palabra: ")
-p = a.generate(inp)
-if p == set():
-    b = SecondaryCandidates()
-    s = b.generate(inp)
-    print("Second:", s)
-else:
-    print("Primary:", p)
+    def generate(self, word):
+        """
+            return a set of secondary candidates
+        """
+        candidates = set()
+        if word != '':
+            helper = self.helper
+            cands = set()
+            # edit distance over result of all_reps
+            # to catch cases like e.g. "corrriend" -> "corriendo"
+            for w in helper.all_reps(word):
+                cands = cands.union(self.edit_distance(w))
+            candidates = helper.filter_candidates(cands)
+        return candidates
 
 
-# esCUELA
-# nombres problems
-# risas terminadas en j o empezadas en vocal
-# Que doy de resultado??
-# Reensamblar tweets
-# caso Loc
+if __name__ == '__main__':
+    a = PrimaryCandidates(2)
+    inp = input("Ingrese palabra: ")
+    a.all_reps(inp)
+    p = a.generate(inp)
+    if p == set():
+        b = SecondaryCandidates()
+        s = b.generate(inp)
+        print("Second:", s)
+    else:
+        print("Primary:", p)
